@@ -38,12 +38,21 @@ body {
             line-height: 47px;
             display: inline-block;
 
+            // 個人書房
             a {
-                background: #666;
+                background: url(../images/kidelab/icon_book.svg) 12px 50% no-repeat $primaryColor;
+                background-size: 30px 30px;
                 color: #fff;
                 display: inline-block;
-                padding: 0 1em;
+                padding: 0 1em 0 3em;
                 border-radius: 4px;
+
+                &:hover,
+                &:focus {
+                    background: url(../images/kidelab/icon_book.svg) 12px 50% no-repeat darken($lightColor, 12);
+                    background-size: 30px 30px;
+                    // border: 1px solid darken($lightColor, 20);
+                }
             }
         }
 

@@ -5,7 +5,8 @@
     z-index: 99;
     // 預設選單 ul
     clear: both;
-    background: darken(rgba(49, 163, 144, .75), 5);
+    // background: darken(rgba(49, 163, 144, .75), 5);
+    background: rgba(196, 207, 142, .8);
     // font-size: 125%;
     padding: 2em 4em;
     border-radius: 0 0 20px 20px;
@@ -408,9 +409,10 @@
                     font-size: 100%;
                     display: block;
                     margin-top: 12px;
-                    background: #666;
+                    background: url(../images/kidelab/icon_book.svg) 16px 50% no-repeat #666;
+                    background-size: 30px 30px;
                     color: #fff;
-                    padding: 6px 1em;
+                    padding: .75em 1em .75em 4em;
                     border-radius: 4px;
                 }
             }

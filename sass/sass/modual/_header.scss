@@ -82,13 +82,25 @@
         .btn-login {
             right: calc(1em + 2.5em);
             font-size: 110%;
-            padding: 0.8em 2em;
+            padding: .8em 2em .8em 3em;
+            background: url(../images/kidelab/icon_user.svg) 12px 50% no-repeat #D9E0B5;
+            background-size: 30px 30px;
+
+            &:hover,
+            &:focus {
+                background: url(../images/kidelab/icon_user2.svg) 12px 50% no-repeat darken($lightColor, 12);
+                background-size: 30px 30px;
+                border: 1px solid darken($lightColor, 20);
+            }
         }
 
         // 打開選單
+        .btn-open {
+            text-indent: -9999px;
+        }
+
         .btn-open,
         .btn-close {
-            text-indent: -9999px;
 
             &:before {
                 content: '';
@@ -124,20 +136,25 @@
         // 關閉選單
         .btn-close {
             position: relative;
+            color: #fff;
+            background: #666;
+            padding: .9em 1.25em .9em 3em;
+            font-size: 110%;
 
             &:before {
                 background: url(../images/kidelab/icon_close.svg) 50% 50% no-repeat;
                 background-size: contain;
-                // filter: invert(0);
-                // transition: .3s;
+                left: 16px;
+                filter: invert(1);
             }
 
-            // &:hover,
-            // &:focus {
-            //     &:before {
-            //         filter: invert(1);
-            //     }
-            // }
+            &:hover,
+            &:focus {
+                background: darken($lightColor, 12);
+                border: 1px solid darken($lightColor, 20);
+
+                &:before {}
+            }
         }
 
 
