@@ -7,6 +7,8 @@ html {
 }
 
 body {
+    background: #FAF9EF;
+
     &.noscroll {
         position: static !important;
         width: 100%;
@@ -22,8 +24,41 @@ body {
 .wrapper {
     width: 100%;
     margin: 0px auto;
+
+    // 桌機版使用者登入
+    .user {
+        position: absolute;
+        right: 6em;
+        bottom: 1em;
+        display: flex;
+        flex-flow: row nowrap;
+
+        p {
+            margin: 0 .5em 0 0;
+            line-height: 47px;
+            display: inline-block;
+
+            a {
+                background: #666;
+                color: #fff;
+                display: inline-block;
+                padding: 0 1em;
+                border-radius: 4px;
+            }
+        }
+
+        button {
+            margin: 0;
+        }
+    }
+
+    @include screen('tablet') {
+        .user {
+            display: none;
+        }
+    }
+
     @include screen('mobile') {
-        background: #FFF;
         overflow: hidden;
         overflow-y: auto;
     }
@@ -34,14 +69,46 @@ body {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
+    @include gutter(2em);
 }
 
 .main {
     position: relative;
-    margin: 0 auto;
+    margin: 130px auto 0;
+
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     h2 {
         line-height: 1.25em;
+    }
+
+    // 手機版使用者登入
+    .user {
+        position: initial;
+        padding: 1em 2em;
+        background: #e5e5e5;
+        display: none;
+    }
+
+    // 搜尋
+    .search {
+        .form_grp {
+            display: flex;
+            flex-flow: row nowrap;
+
+            label {
+                font-size: 0;
+            }
+
+            #mustSameAsId {
+                padding-left: 3em;
+                background: url(../images/kidelab/icon_search.svg) 16px 50% no-repeat #fff;
+                background-size: 20px 20px;
+            }
+        }
+    }
+
+    @include screen('tablet') {
+        margin-top: 90px;
     }
 }
 
@@ -52,43 +119,65 @@ body {
         @include gutter(); //gutter 代表左右要留白
         display: flex;
     }
+
     .center_block {
         flex: none;
         flex-basis: 100%;
         max-width: 100%;
     }
-    .left_block {
-        flex: none;
-        flex-basis: 260px;
-        max-width: 260px;
-        margin-right: 40px;
-        &.hidden {
-            +.center_block {
-                flex: none;
-                flex-basis: 100%;
-                max-width: 100%;
-            }
-        }
-        +.center_block {
-            flex: auto;
-            flex-basis: calc(100% - 300px);
-            max-width: calc(100% - 300px);
-        }
-        @include screen('tablet') {
-            display: none;
-            +.center_block {
-                flex: none;
-                flex-basis: 100%;
-                max-width: 100%;
-            }
-        }
+
+    // 內頁標題＋function
+    .pageHead {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        h2.title {}
+
+        .function {}
     }
-    &.small_size {
-        font-size: .938em;
-    }
-    &.large_size {
-        font-size: 1.125em;
-    }
+
+    // 單元，設定在
+    .units {}
+
+    // .left_block {
+    //     flex: none;
+    //     flex-basis: 260px;
+    //     max-width: 260px;
+    //     margin-right: 40px;
+
+    //     &.hidden {
+    //         +.center_block {
+    //             flex: none;
+    //             flex-basis: 100%;
+    //             max-width: 100%;
+    //         }
+    //     }
+
+    //     +.center_block {
+    //         flex: auto;
+    //         flex-basis: calc(100% - 300px);
+    //         max-width: calc(100% - 300px);
+    //     }
+
+    //     @include screen('tablet') {
+    //         display: none;
+
+    //         +.center_block {
+    //             flex: none;
+    //             flex-basis: 100%;
+    //             max-width: 100%;
+    //         }
+    //     }
+    // }
+
+    // &.small_size {
+    //     font-size: .938em;
+    // }
+
+    // &.large_size {
+    //     font-size: 1.125em;
+    // }
 }
 
 .hidden {

@@ -1,5 +1,5 @@
 // 自行加入的JS請寫在這裡
-$(function() {
+$(function () {
     //sticky sidebar
     if ($('.stickySidebar').length > 0) {
         var stickySidebar = new StickySidebar('.stickySidebar', {
@@ -10,6 +10,15 @@ $(function() {
             resizeSensor: true,
         });
     }
+
+    // 選單展開
+    $('.btn-open').click(function () {
+        $('.megamenu').slideToggle(300);
+    });
+    $('.btn-close').click(function () {
+        $('.megamenu').slideUp(300);
+    });
+
     // 首頁輪播
     $('.mpSlider').slick({
         mobileFirst: true,
@@ -24,7 +33,7 @@ $(function() {
         ease: 'ease',
         pauseOnHover: false,
         pauseOnFocus: false,
-        customPaging: function(slider, i) {
+        customPaging: function (slider, i) {
             var title = $(slider.$slides[i]).find('img').attr('alt').trim();
             return $('<button type="button" aria-label="' + title + '"/>').text(title);
         }
@@ -153,7 +162,7 @@ $(function() {
         }]
     });
     // cp_photo
-    $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
+    $('.Slider-for').on('init reInit afterChange', function (event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
         $('.controls').html(i + '/' + slick.slideCount);
     });
@@ -181,8 +190,8 @@ $(function() {
 
     // password_toggle
     var passShow = false;
-    $('.password_toggle').each(function(index, el) {
-        $(this).find('.btn-icon').off().click(function(e) {
+    $('.password_toggle').each(function (index, el) {
+        $(this).find('.btn-icon').off().click(function (e) {
             if (!passShow) {
                 $(this).children('i').removeClass().addClass('i_show');
                 $(this).parents('.password_toggle').find('input[type="password"]').attr('type', 'text');

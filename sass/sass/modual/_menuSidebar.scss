@@ -2,6 +2,7 @@
 $sidebar_bgColor: saturate(darken($primaryColor, 18), 20);
 // 選色參考：https://sassme.jim-nielsen.com/
 $menuItems: 15;
+
 // 行動版選單sidebar
 .sidebar {
     position: fixed;
@@ -21,7 +22,8 @@ $menuItems: 15;
     .megamenu {
         display: block;
     }
-    > .menu_overlay {
+
+    >.menu_overlay {
         background: RGBA(0, 0, 0, 0.5);
         position: fixed;
         top: 0;
@@ -36,6 +38,7 @@ $menuItems: 15;
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
+
     .m_area {
         width: 300px;
         padding: 3em 0;
@@ -50,13 +53,16 @@ $menuItems: 15;
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
         box-sizing: border-box;
+
         &.open {
+
             .menu,
             .megamenu {
-                & > ul {
-                    & > li {
+                &>ul {
+                    &>li {
                         transform: scale(1) translateX(0px);
                         opacity: 1;
+
                         @for $i from 1 through $menuItems {
                             &:nth-child(#{$i}) {
                                 transition-delay: #{0.07 * $i + 0.2}s;
@@ -66,10 +72,12 @@ $menuItems: 15;
                 }
             }
         }
+
         .menu,
         .megamenu {
             width: 90%;
             margin: 0 auto 1em;
+
             a {
                 display: block;
                 color: #fff;
@@ -78,11 +86,13 @@ $menuItems: 15;
                 transition: 0.3s $cubic;
                 text-align: left;
             }
-            & > ul {
-                & > li {
+
+            &>ul {
+                &>li {
                     transform: scale(1.15) translateX(-30px);
                     opacity: 0;
                     transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+
                     @for $i from 1 through $menuItems {
                         &:nth-child(#{$i}) {
                             transition-delay: #{0.56 - ($i * 0.07)}s;
@@ -90,24 +100,29 @@ $menuItems: 15;
                     }
                 }
             }
+
             ul {
                 display: flex;
                 animation: showMenu 0.3s $cubic;
                 left: 0;
+
                 li {
                     flex: 1 1 100%;
                     flex-direction: row;
-                    > a {
+
+                    >a {
                         padding: 0.5em 1em;
                         min-height: 2em;
                         line-height: 2em;
                         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
                     }
+
                     &.hasChild {
-                        > a {
+                        >a {
                             position: relative;
                             padding: 0.5em 2em 0.5em 1em;
                             color: #fff;
+
                             &:after {
                                 content: '';
                                 position: absolute;
@@ -124,6 +139,7 @@ $menuItems: 15;
                             }
                         }
                     }
+
                     ul {
                         display: none;
                         position: relative;
@@ -131,6 +147,7 @@ $menuItems: 15;
                         background-color: transparent;
                         font-size: 0.938em;
                         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
                         li {
                             a {
                                 display: block;
@@ -139,24 +156,28 @@ $menuItems: 15;
                                 font-weight: normal;
                                 padding: 0.5em 1em 0.5em 2em !important;
                                 border: none;
+
                                 &:hover,
-                                &:focus {
-                                }
+                                &:focus {}
                             }
+
                             &.hasChild {
-                                > a {
+                                >a {
                                     padding: 0.5em 1em 0.5em 2em !important;
+
                                     &:after {
                                         top: 0.85em;
                                     }
                                 }
                             }
+
                             li {
                                 a {
                                     padding: 0.5em 1em 0.5em 4em !important;
+
                                     &:hover,
-                                    &:focus {
-                                    }
+                                    &:focus {}
+
                                     &:after {
                                         display: none;
                                     }
@@ -168,11 +189,13 @@ $menuItems: 15;
             }
         }
     }
+
     .navigation {
         position: relative;
         margin: 1em auto;
         text-align: left;
         width: 90%;
+
         ul {
             float: none;
             overflow: hidden;
@@ -180,15 +203,18 @@ $menuItems: 15;
             list-style: none;
             display: flex;
             flex-flow: row wrap;
+
             li {
                 flex-grow: 1;
                 flex-shrink: 1;
                 flex-basis: 100%;
                 margin: 0;
                 padding: 0;
+
                 &:nth-child(odd):last-child {
                     width: 100%;
                 }
+
                 a {
                     display: block;
                     line-height: 1.5em;
@@ -198,19 +224,21 @@ $menuItems: 15;
                     font-weight: normal;
                     text-decoration: none;
                     position: relative;
+
                     &:before {
                         position: absolute;
-                        top: 0.75em;
+                        top: calc(50% - 3px);
                         left: 0;
                         content: '';
                         width: 0;
                         height: 0;
                         border-style: solid;
-                        border-width: 2px 0 2px 4px;
+                        border-width: 4px 0 4px 6px;
                         border-color: transparent transparent transparent #ffffff;
                         transition: 0.3s $cubic;
                         opacity: 0;
                     }
+
                     &:hover,
                     &:focus {
                         &:before {
@@ -221,20 +249,25 @@ $menuItems: 15;
                 }
             }
         }
+
         .language {
             position: relative;
             width: 100%;
             @include gutter;
+
             a {
                 padding: 0.6em 1em;
                 background: rgba(0, 0, 0, 0.4);
+
                 &:after {
                     top: 1.3em;
                 }
+
                 &:before {
                     top: 0.8em;
                 }
             }
+
             ul {
                 width: 100%;
                 margin: 0;
@@ -243,8 +276,10 @@ $menuItems: 15;
                 padding: 0;
                 border: none;
                 background: none;
+
                 li {
                     width: 100% !important;
+
                     a {
                         border: none;
                         background: rgba(0, 0, 0, 0.4);
@@ -252,10 +287,12 @@ $menuItems: 15;
                 }
             }
         }
+
         .font_size {
             display: none;
         }
     }
+
     button.sidebarClose {
         position: absolute;
         display: block;
@@ -270,10 +307,12 @@ $menuItems: 15;
         border: none;
         background: none;
         border: none;
+
         &:hover,
         &:focus {
             box-shadow: none;
         }
+
         &:before {
             position: absolute;
             width: 15px;
