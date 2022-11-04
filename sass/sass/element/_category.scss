@@ -2,7 +2,7 @@
 .units {
     @extend %clearfix;
     text-align: left;
-    margin: 1em auto;
+    margin: .5em auto;
 
     ul {
         @include li-reset;
@@ -55,6 +55,7 @@
     a {
         padding: .65em 1em;
         color: #333;
+        background: #fff;
         border-radius: 8px;
     }
 }

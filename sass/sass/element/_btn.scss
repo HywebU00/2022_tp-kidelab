@@ -147,6 +147,95 @@ $btn-radius: .2em;
 
 .btn-more {
     font-size: 110%;
+    @include btn_setting(#666, #FFF);
+    padding: 1em 3em;
+}
+
+// 我要答題
+.btn-solving,
+.btn-change,
+.btn-ans,
+.btn-passed,
+.btn-anslist {
+    // padding-left: 3em;
+    position: relative;
+    @include btn_setting($primaryColor, #FFF);
+    font-size: 110% !important;
+    padding: 1em 1em 1em 3em;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        // background: #222;
+        left: 12px;
+        top: 50%;
+        margin-top: -15px;
+        filter: invert(1);
+        transition: .3s;
+    }
+
+    &:hover,
+    &:focus {
+        &:before {
+            left: 16px;
+        }
+    }
+}
+
+
+.btn-solving {
+    @include btn_setting($primaryColor, #FFF);
+
+    &:before {
+        background: url(../images/kidelab/icon_hand.svg) 50% 50% no-repeat;
+        background-size: contain;
+    }
+}
+
+// 修改回答
+.btn-change {
+    @include btn_setting(#054888, #fff);
+
+    &:before {
+        background: url(../images/kidelab/icon_pen.svg) 50% 50% no-repeat;
+        background-size: contain;
+    }
+}
+
+// 正確答案
+.btn-ans {
+    @include btn_setting(#a20404, #fff);
+
+    &:before {
+        background: url(../images/kidelab/icon_light.svg) 50% 50% no-repeat;
+        background-size: contain;
+    }
+}
+
+// 答對名單
+.btn-passed {
+    &:before {
+        background: url(../images/kidelab/icon_list.svg) 50% 50% no-repeat;
+        background-size: contain;
+    }
+}
+
+// 答題明細
+.btn-anslist {
+    &:before {
+        background: url(../images/kidelab/icon_list2.svg) 50% 50% no-repeat;
+        background-size: contain;
+    }
+}
+
+// 我要答題 .btn-solving,
+.btn-change,
+.btn-ans,
+.btn-passed,
+.btn-anslist {
+    font-size: 110% !important;
 }
 
 // 主要按鈕

@@ -466,6 +466,7 @@ select::-ms-expand {
             // padding: 18px 0;
             color: darken($primaryColor, 10);
             font-weight: 500;
+            font-size: 110%;
         }
 
     }
@@ -1614,7 +1615,7 @@ input[type="submit"] {
 
 textarea {
     @include formStyle();
-    height: 5em;
+    min-height: 5em;
     overflow-y: scroll;
 
     @include screen('xs_mobile') {
