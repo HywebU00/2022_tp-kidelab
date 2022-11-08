@@ -57,16 +57,116 @@ $m-gutter: 20px;
             @include flex-lg-equal(3, $m-gutter);
             @include gutter();
         }
+    }
+
+    // 近期活動
+    &.recent-act {
+        .Flex-set {
+            margin-top: 2em;
+
+            .col {
+                text-align: center;
+                background: #ddd;
+                padding: 2em;
+                border-radius: 6px;
+
+                @include flex-xs-equal(1, 0px);
+                @include flex-sm-equal(1, 0px);
+                @include flex-md-equal(3, $m-gutter);
+                @include flex-lg-equal(3, $m-gutter);
+
+                span {
+                    font-size: 130%;
+                    display: block;
+                    margin-bottom: 1em;
+                }
+
+                b {
+                    display: inline-block;
+                    background: #fff;
+                    border-radius: 50%;
+                    padding: 1em;
+                    font-size: 160%;
+                }
+
+                &:nth-child(1) {
+                    // background: #ECF3F9;
+                    background: url(../images/kidelab/Graphic-1.svg) left 10% bottom -20px no-repeat #ECF3F9;
+                }
+
+                &:nth-child(2) {
+                    // background: #F8EAE2;
+                    background: url(../images/kidelab/Graphic-2.svg) right 10% bottom -20px no-repeat #F8EAE2;
+                    transform: scaleX(-1);
+
+                    span,
+                    b {
+                        transform: scaleX(-1);
+                    }
+                }
+
+                &:nth-child(3) {
+                    // background: #EDE8F2;
+                    background: url(../images/kidelab/Graphic-3-1.svg) left 10% bottom 0 no-repeat #EDE8F2;
+                }
+            }
+        }
+
+        @include screen('tablet') {
+            .col {
+                &:nth-child(2) {
+                    margin: 1em 0;
+                }
+            }
+        }
+    }
+}
+
+.flex-equal-4 {
+    .Flex-set {
+        align-items: stretch;
 
         .thumbnail {
             margin-bottom: 30px;
             @include flex-xs-equal(1, 0px);
             @include flex-sm-equal(2, $m-gutter);
-            @include flex-md-equal(3, $m-gutter);
-            @include flex-lg-equal(3, $m-gutter);
+            @include flex-md-equal(4, $m-gutter);
+            @include flex-lg-equal(4, $m-gutter);
 
             @include screen('mobile') {
                 justify-content: center;
+            }
+        }
+    }
+
+    &.list {
+        .Flex-set {
+            .thumbnail {
+                @include flex-xs-equal(1, 0px);
+                @include flex-sm-equal(1, 0px);
+                @include flex-md-equal(1, 0px);
+                @include flex-lg-equal(1, 0px);
+
+                a {
+                    display: flex;
+                    flex-wrap: nowrap;
+
+                    .img-container {
+                        flex: 0 0 320px;
+                        margin-bottom: 0;
+                    }
+
+                    .caption {
+                        flex: 1 1 auto;
+
+                        .info {
+
+                            b {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

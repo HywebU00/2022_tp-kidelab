@@ -180,8 +180,9 @@ select::-ms-expand {
         margin: 0;
         // padding: .15em 1.6em;
         font-size: .938em;
-        right: .3em;
-        top: .35em;
+        right: .5em;
+        top: 50%;
+        margin-top: -19px;
         height: 38px;
         background: none;
         border: transparent;
