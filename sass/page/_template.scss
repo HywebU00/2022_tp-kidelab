@@ -315,7 +315,7 @@ body {
             // background: #86b0f3;
             color: #fff;
             background: #72aa00;
-            padding: .45em 2.5em;
+            padding: .75em 2.5em;
             border-radius: 60px;
             display: inline-block;
         }
@@ -366,7 +366,6 @@ body {
         -webkit-backdrop-filter: blur(10px);
 
         time {
-
             span {
                 display: inline-block;
                 border-left: 1px solid #222;
@@ -535,6 +534,15 @@ body {
         }
         @include screen('mobile') {
             padding: 2em 2em;
+
+            time {
+                span{
+                    display: block;
+                    margin-left: 0;
+                    border-left: none;
+                    padding-top: .5em;
+                }
+            }
         }
     }
 
