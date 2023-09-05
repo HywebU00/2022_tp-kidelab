@@ -5910,7 +5910,7 @@ select::-ms-expand {
   }
 }
 .flex-form .form_col-2-2-2-2-2-2 > .form_grp {
-  width: 16.6666666667%;
+  width: clac(100%/6);
   flex-basis: 16.6666666667%;
   max-width: 16.6666666667%;
 }

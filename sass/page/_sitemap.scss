@@ -33,7 +33,7 @@
 }
 
 $sitemapLength : 4;
-$sitemapWidth: 100%/ $sitemapLength;
+$sitemapWidth: calc(100% / $sitemapLength);
 
 .cascading {
     // border-top: 1px solid #222;
