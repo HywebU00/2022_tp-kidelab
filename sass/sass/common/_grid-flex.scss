@@ -37,17 +37,45 @@ $m-gutter: 20px;
 //     }
 // }
 
-// .flex-equal-2{
-//     .Flex-set{
-//         .col{
-//             @include flex-xs-equal(1, 0px);
-//             @include flex-sm-equal(2, $m-gutter);
-//             @include flex-md-equal(2, $m-gutter);
-//             @include flex-lg-equal(2, $m-gutter);
-//             @include gutter();
-//         }
-//     }
-// }
+.flex-equal-2{
+    .Flex-set{
+        // .col{
+        //     @include flex-xs-equal(1, 0px);
+        //     @include flex-sm-equal(2, $m-gutter);
+        //     @include flex-md-equal(2, $m-gutter);
+        //     @include flex-lg-equal(2, $m-gutter);
+        //     @include gutter();
+        // }
+        .thumbnail {
+            &._inline{
+                @include flex-xs-equal(1, 0px);
+                @include flex-sm-equal(2, $m-gutter);
+                @include flex-md-equal(2, $m-gutter);
+                @include flex-lg-equal(2, $m-gutter);
+                margin-bottom: 30px;
+
+                a{
+                    // display: flex;
+                    // flex-wrap: nowrap;
+                    .img-container{
+                        height: 240px;
+                    }
+                    .caption{
+                        display: flex;
+                        flex-wrap: wrap;
+                        h3{
+                            flex: 1 1 100%;
+                        }
+                        p{
+                            flex: 1 1 50%;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
 .flex-equal-3 {
     .Flex-set {
         .col {
